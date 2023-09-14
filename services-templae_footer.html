@@ -1,0 +1,19 @@
+<!-- Controls if a service is gated or not -->
+<script>
+    let isGated = {{wf {&quot;path&quot;:&quot;gated&quot;,&quot;type&quot;:&quot;Bool&quot;\} }};
+
+    if (isGated) {
+        $(".gated-service_component").css("display", "flex");
+    }
+
+    $("[gated-service-submit]").on("click", function(e) {
+        e.preventDefault();
+        $(".gated-service_component").css("display", "none");
+    });
+</script>
+
+<!-- Fills the service name inside the hidded input on the contact form -->
+<script>
+    let serviceName = $("#service-name").text();
+    $(".form_input.is-service").val(serviceName);
+</script>
