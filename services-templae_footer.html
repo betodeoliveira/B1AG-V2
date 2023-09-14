@@ -6,9 +6,9 @@
         $(".gated-service_component").css("display", "flex");
     }
 
-    $("[gated-service-submit]").on("click", function(e) {
-        e.preventDefault();
+    $("#gated-service-form").on("submit", function(e) {
         $(".gated-service_component").css("display", "none");
+        return false;
     });
 </script>
 
